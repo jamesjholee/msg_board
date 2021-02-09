@@ -16,8 +16,7 @@
 
 ### Built With
 
-* [Client](React.js)
-* [Server](Node.js, Express.js)
+* React.js,Node.js, Express.js
 
 
 
