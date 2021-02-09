@@ -1,0 +1,133 @@
+:root {
+    --main-color: #0160ff;
+    --secondary-color: #000210;
+    --main-text-color: #fff;
+    --secondary-text-color: #95B1C8;
+    --send-message-form: #fff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    font-weight: 200;
+    color:  #3e5869; 
+}
+
+#root {
+    height: 100%;
+}
+
+.app {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px;
+    grid-template-areas: 
+        "m m m m m c"
+        "m m m m m c"
+        "m m m m m c"
+        "m m m m m c"
+        "m m m m m c"
+        "i i i i i i";
+}
+
+.channelList {
+    grid-area: c;
+}
+
+.messageList {
+    grid-area: m;
+}
+
+.postMessage {
+    grid-area: i;
+}
+
+/* REST OF CSS */
+.channelList {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--main-color);
+    overflow: scroll;
+    height: 100%;
+}
+
+.channelList .channelList--listItem {
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+}
+
+.channelList .channelList--listItem.active {
+    color: var(--secondary-color);
+}
+
+.messageList--msg {
+    margin: 15px 0;
+    background: var(--main-color);
+    color: var(--main-text-color);
+    display: inline;
+    padding: 4px 8px;
+    border-radius: 8px;
+    align-items: flex-end;
+}
+
+.messageList {
+    box-sizing: border-box;
+    padding-left: 6px;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    background: var(--secondary-color);
+    font-size: 34px;
+    font-weight: 300;
+    padding: 50px;
+    align-items: flex-end;
+}
+
+.messageList--loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 34px;
+    font-weight: 300;
+}
+
+
+.postMessage {
+    background: var(--send-message-form);
+    display: flex;
+}
+
+.postMessage--input {
+    flex: 0 0 79%;
+    padding: 15px 10px;
+    margin: 0;
+    border-style: none;
+    background: var(--send-message-form);
+    font-weight: 200;
+
+}
+
+.postMessage--submit {
+    flex: 0 0 20%;
+}
+
+.postMessage .postMessage--input:focus {
+    outline-width: 0;
+}
+
+.postMessage .postMessage--input::placeholder {
+    color: var(--secondary-color);
+}
+
+.postMessage--form {
+    display: flex;
+    width: 100%;
+}
